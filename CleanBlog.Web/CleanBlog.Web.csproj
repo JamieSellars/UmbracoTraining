@@ -2159,6 +2159,9 @@
     <Content Include="Views\content.cshtml" />
     <Content Include="Views\search.cshtml" />
     <Content Include="Views\contact.cshtml" />
+    <Content Include="Views\Partials\page-header.cshtml" />
+    <Content Include="Views\error.cshtml" />
+    <Content Include="Views\Partials\Grid\Clean.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2166,7 +2169,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CleanBlog.Core\CleanBlog.Core.csproj">
+      <Project>{c1625e72-c427-48a4-8f3a-1ac80a004c6b}</Project>
+      <Name>CleanBlog.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
