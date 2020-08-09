@@ -1,13 +1,60 @@
 ﻿@inherits UmbracoViewPage
+
+@{ 
+    var title = Model.HasValue("title") ? Model.Value("title") : Model.Name;
+    var subTitle = Model.HasValue("subtitle") ? Model.Value<string>("subtitle") : string.Empty;
+    var image = Model.Value<IPublishedContent>("image", fallback: Fallback.ToAncestors);
+
+    var imageUrl = string.Empty;
+    if(image != null)
+    {
+        imageUrl = image.GetCropUrl(1903, 532);
+    }
+
+    var authorName = Model.HasProperty("authorName") && Model.HasValue("authorName") ? Model.Value<string>("authorName") : string.Empty;
+    var articleDate = Model.HasProperty("articleDate") && Model.HasValue("articleDate") ? Model.Value<DateTime>("articleDate") : DateTime.MinValue;
+
+    var hasAuthorDetails = !string.IsNullOrEmpty(authorName) || articleDate != DateTime.MinValue;
+
+}
+
+
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('/img/home-bg.jpg')">
+<header class="masthead" style="@(!string.IsNullOrEmpty(imageUrl) ? $"background-image: url('{imageUrl}')" : null)">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>@(Model.Name)</h1>
-                    <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                    <h1>@(title)</h1>
+
+                    @if (!string.IsNullOrEmpty(subTitle))
+                    {
+                        if (hasAuthorDetails)
+                        {
+                            <h2 class="subheading">@(subTitle)</h2>
+                        }
+                        else
+                        {
+                            <span class="subheading">@(subTitle)</span>
+                        }
+
+                    }
+
+                    @if (hasAuthorDetails)
+                    {
+                        <span class="meta">
+                            Posted 
+                            @if(!string.IsNullOrWhiteSpace(authorName))
+                            {
+                                @Html.Raw("by ") @authorName
+                            }
+                            on @(articleDate.ToString("MMMM dd, yyyy"))
+                        </span>
+                    }
+
+
+
                 </div>
             </div>
         </div>

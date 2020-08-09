@@ -2162,6 +2162,7 @@
     <Content Include="Views\Partials\page-header.cshtml" />
     <Content Include="Views\error.cshtml" />
     <Content Include="Views\Partials\Grid\Clean.cshtml" />
+    <Content Include="Views\XMLSitemap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
