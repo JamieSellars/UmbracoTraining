@@ -264,8 +264,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TEMP\ClientDependency\JAMIE-PC-3259a9d6c52095c87d1f07f0388f863b-map.xml" />
-    <Content Include="App_Data\TEMP\DistCache\LMW3SVC2ROOT-lastsynced.txt" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -287,6 +285,11 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="Global.asax" />
+    <Content Include="img\about-bg.jpg" />
+    <Content Include="img\contact-bg.jpg" />
+    <Content Include="img\home-bg.jpg" />
+    <Content Include="img\post-bg.jpg" />
+    <Content Include="img\post-sample-image.jpg" />
     <Content Include="Umbraco\assets\css\canvasdesigner.css" />
     <Content Include="Umbraco\assets\css\installer.css" />
     <Content Include="Umbraco\assets\css\nonodes.style.min.css" />
@@ -2020,8 +2023,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\Models\all.generated.cs" />
-    <Compile Include="App_Data\Models\models.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2036,38 +2037,6 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
-    <Content Include="App_Data\Logs\UmbracoTraceLog.JAMIE-PC.20200809.json" />
-    <Content Include="App_Data\Models\all.dll.path" />
-    <Content Include="App_Data\Models\models.hash" />
-    <Content Include="App_Data\packages\installedPackages.config" />
-    <Content Include="App_Data\TEMP\ClientDependency\1_10b65abc77b5474b81ce2271716a3236.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\1_3fe5041145654a0499a4e0256a77c0d0.cdC" />
-    <Content Include="App_Data\TEMP\ClientDependency\1_59769be76c2c4e208808eaeca9e8d1c0.cdJ" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments_5" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\write.lock" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_0.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_0_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_1.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_1_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_2.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_2_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_3.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments_5" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_0.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_0_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_1.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_1_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_2.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_2_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_3.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments_1" />
-    <Content Include="App_Data\TEMP\NuCache\NuCache.Content.db" />
-    <Content Include="App_Data\TEMP\NuCache\NuCache.Media.db" />
-    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.JAMIE-PC.hash" />
-    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.JAMIE-PC.list" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -2182,6 +2151,14 @@
     <Content Include="Umbraco\Views\web.config" />
     <Content Include="Views\home.cshtml" />
     <Content Include="Views\master.cshtml" />
+    <Content Include="Views\Partials\navigation.cshtml" />
+    <Content Include="Views\Partials\footer.cshtml" />
+    <Content Include="Views\Partials\latest-articles.cshtml" />
+    <Content Include="Views\article.cshtml" />
+    <Content Include="Views\articleList.cshtml" />
+    <Content Include="Views\content.cshtml" />
+    <Content Include="Views\search.cshtml" />
+    <Content Include="Views\contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2189,10 +2166,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\TEMP\FileUploads\" />
-    <Folder Include="App_Data\TEMP\Install\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
